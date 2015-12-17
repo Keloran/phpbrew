@@ -93,7 +93,7 @@ class ExtensionDownloader
         } else {
             $proxyOptions = Config::getProxyConfig();
             if ($proxyOptions) {
-                $context = stream_context_create($proxyOptions);
+                $context = stream_context_create(array($proxyOptions));
                 $info = file_get_contents($url, false, $context);
             } else {
                 $info = file_get_contents($url);

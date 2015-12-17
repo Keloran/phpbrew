@@ -189,7 +189,7 @@ class ReleaseList
         } else {
             $proxyOptions = Config::getProxyConfig();
             if ($proxyOptions) {
-                $context = steam_context_create($proxyOptions);
+                $context = steam_context_create(array($proxyOptions));
                 $json = file_get_contents($url, false, $context);
             } else {
                 $json = file_get_contents($url);
